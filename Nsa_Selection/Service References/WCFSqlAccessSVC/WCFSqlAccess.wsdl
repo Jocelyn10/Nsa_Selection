@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFSqlAccess" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd3" />
+      <xsd:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Reflection" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWCFSqlAccess_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_executeNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:executeNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_executeNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:executeNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_executeNonQueryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:executeNonQueryList" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_executeNonQueryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:executeNonQueryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_checkConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkConnection" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_checkConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getExcelDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:getExcelDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getExcelDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getExcelDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getExcelRangeDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:getExcelRangeDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getExcelRangeDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getExcelRangeDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_excelExecuteNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:excelExecuteNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_excelExecuteNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:excelExecuteNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_readExcelDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:readExcelDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_readExcelDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readExcelDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_readExcelRangeDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:readExcelRangeDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_readExcelRangeDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readExcelRangeDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_extractDataFromDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:extractDataFromDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_extractDataFromDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:extractDataFromDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getTextFromDataBase_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTextFromDataBase" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getTextFromDataBase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTextFromDataBaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getTextFromDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTextFromDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getTextFromDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTextFromDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getIntFromDataBase_InputMessage">
+    <wsdl:part name="parameters" element="tns:getIntFromDataBase" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getIntFromDataBase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getIntFromDataBaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getIntFromDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:getIntFromDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getIntFromDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getIntFromDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_findIntRowIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:findIntRowIndex" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_findIntRowIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:findIntRowIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_findTextRowIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:findTextRowIndex" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_findTextRowIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:findTextRowIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getDataFromDataBase_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDataFromDataBase" />
+  </wsdl:message>
+  <wsdl:message name="IWCFSqlAccess_getDataFromDataBase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDataFromDataBaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWCFSqlAccess">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/GetData" message="tns:IWCFSqlAccess_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/GetDataResponse" message="tns:IWCFSqlAccess_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/GetDataUsingDataContract" message="tns:IWCFSqlAccess_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/GetDataUsingDataContractResponse" message="tns:IWCFSqlAccess_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/getDataSet" message="tns:IWCFSqlAccess_getDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/getDataSetResponse" message="tns:IWCFSqlAccess_getDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="executeNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/executeNonQuery" message="tns:IWCFSqlAccess_executeNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/executeNonQueryResponse" message="tns:IWCFSqlAccess_executeNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="executeNonQueryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/executeNonQueryList" message="tns:IWCFSqlAccess_executeNonQueryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/executeNonQueryListResponse" message="tns:IWCFSqlAccess_executeNonQueryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/checkConnection" message="tns:IWCFSqlAccess_checkConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/checkConnectionResponse" message="tns:IWCFSqlAccess_checkConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExcelDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/getExcelDataSet" message="tns:IWCFSqlAccess_getExcelDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/getExcelDataSetResponse" message="tns:IWCFSqlAccess_getExcelDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExcelRangeDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/getExcelRangeDataSet" message="tns:IWCFSqlAccess_getExcelRangeDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/getExcelRangeDataSetResponse" message="tns:IWCFSqlAccess_getExcelRangeDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="excelExecuteNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/excelExecuteNonQuery" message="tns:IWCFSqlAccess_excelExecuteNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/excelExecuteNonQueryResponse" message="tns:IWCFSqlAccess_excelExecuteNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readExcelDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/readExcelDataSet" message="tns:IWCFSqlAccess_readExcelDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/readExcelDataSetResponse" message="tns:IWCFSqlAccess_readExcelDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readExcelRangeDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/readExcelRangeDataSet" message="tns:IWCFSqlAccess_readExcelRangeDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/readExcelRangeDataSetResponse" message="tns:IWCFSqlAccess_readExcelRangeDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="extractDataFromDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/extractDataFromDataSet" message="tns:IWCFSqlAccess_extractDataFromDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/extractDataFromDataSetResponse" message="tns:IWCFSqlAccess_extractDataFromDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextFromDataBase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/getTextFromDataBase" message="tns:IWCFSqlAccess_getTextFromDataBase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/getTextFromDataBaseResponse" message="tns:IWCFSqlAccess_getTextFromDataBase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTextFromDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/getTextFromDataSet" message="tns:IWCFSqlAccess_getTextFromDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/getTextFromDataSetResponse" message="tns:IWCFSqlAccess_getTextFromDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getIntFromDataBase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/getIntFromDataBase" message="tns:IWCFSqlAccess_getIntFromDataBase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/getIntFromDataBaseResponse" message="tns:IWCFSqlAccess_getIntFromDataBase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getIntFromDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/getIntFromDataSet" message="tns:IWCFSqlAccess_getIntFromDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/getIntFromDataSetResponse" message="tns:IWCFSqlAccess_getIntFromDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findIntRowIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/findIntRowIndex" message="tns:IWCFSqlAccess_findIntRowIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/findIntRowIndexResponse" message="tns:IWCFSqlAccess_findIntRowIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findTextRowIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/findTextRowIndex" message="tns:IWCFSqlAccess_findTextRowIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/findTextRowIndexResponse" message="tns:IWCFSqlAccess_findTextRowIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromDataBase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFSqlAccess/getDataFromDataBase" message="tns:IWCFSqlAccess_getDataFromDataBase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFSqlAccess/getDataFromDataBaseResponse" message="tns:IWCFSqlAccess_getDataFromDataBase_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWCFSqlAccess" type="tns:IWCFSqlAccess">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataSet">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/getDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="executeNonQuery">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/executeNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="executeNonQueryList">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/executeNonQueryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkConnection">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/checkConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExcelDataSet">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/getExcelDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExcelRangeDataSet">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/getExcelRangeDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="excelExecuteNonQuery">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/excelExecuteNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readExcelDataSet">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/readExcelDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readExcelRangeDataSet">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/readExcelRangeDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extractDataFromDataSet">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/extractDataFromDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextFromDataBase">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/getTextFromDataBase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTextFromDataSet">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/getTextFromDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIntFromDataBase">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/getIntFromDataBase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIntFromDataSet">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/getIntFromDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findIntRowIndex">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/findIntRowIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findTextRowIndex">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/findTextRowIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromDataBase">
+      <soap:operation soapAction="http://tempuri.org/IWCFSqlAccess/getDataFromDataBase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCFSqlAccess">
+    <wsdl:port name="BasicHttpBinding_IWCFSqlAccess" binding="tns:BasicHttpBinding_IWCFSqlAccess">
+      <soap:address location="http://localhost/WCFSqlAccess/WCFSqlAccess.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

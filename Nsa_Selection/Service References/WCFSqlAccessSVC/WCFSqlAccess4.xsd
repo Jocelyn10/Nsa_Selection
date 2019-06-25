@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/WCFSqlAccess/WCFSqlAccess.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectStr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cmdText" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getDataSetResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="executeNonQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectStr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cmdText" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="executeNonQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="executeNonQueryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="executeNonQueryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectStr" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="cmdList" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="executeNonQueryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="executeNonQueryListResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="checkConnection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectStr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="checkConnectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="checkConnectionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getExcelDataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="excelfilename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cmdText" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getExcelDataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getExcelDataSetResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getExcelRangeDataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="excelfilename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="excelSheetName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="excelColsRange" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getExcelRangeDataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getExcelRangeDataSetResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="excelExecuteNonQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="excelfilename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cmdText" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="excelExecuteNonQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="excelExecuteNonQueryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readExcelDataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="excelfilename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sheetNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readExcelDataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="readExcelDataSetResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readExcelRangeDataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="excelfilename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sheetNumber" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sheetRange" nillable="true" type="q4:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readExcelRangeDataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="readExcelRangeDataSetResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="extractDataFromDataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ds" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="rowIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="colName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="type" nillable="true" type="q5:Type" />
+        <xs:element minOccurs="0" name="defaultvalue" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="extractDataFromDataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="extractDataFromDataSetResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTextFromDataBase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectionString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cmdText" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="colName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultvalue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTextFromDataBaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getTextFromDataBaseResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTextFromDataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ds" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="rowIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="colName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultvalue" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTextFromDataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getTextFromDataSetResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIntFromDataBase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectionStr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cmdText" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="colName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultvalue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIntFromDataBaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getIntFromDataBaseResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIntFromDataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ds" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="rowIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="colName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultvalue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIntFromDataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getIntFromDataSetResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="findIntRowIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ds" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="valueToFind" type="xs:int" />
+        <xs:element minOccurs="0" name="startingIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="colName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultvalue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="findIntRowIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="findIntRowIndexResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="findTextRowIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ds" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="valueToFind" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startingIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="colName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultvalue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="findTextRowIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="findTextRowIndexResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDataFromDataBase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connectionStr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cmdText" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="colName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="type" nillable="true" type="q6:Type" />
+        <xs:element minOccurs="0" name="defaultvalue" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDataFromDataBaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getDataFromDataBaseResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
